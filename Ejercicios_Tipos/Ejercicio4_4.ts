@@ -49,9 +49,9 @@ function getRandomAnimal() {
     return animals[Math.floor(Math.random() * animals.length)];
 }
  
-type Animal = Bird | Fish
+type animal = Bird | Fish
 
-function interrogateAnimal(animal:Animal = getRandomAnimal()) {
+function interrogateAnimal(animal:animal = getRandomAnimal()) {
 
     if (animal instanceof Fish) {
         (animal as Fish).swim(10);    // se llama solo si es un pez
