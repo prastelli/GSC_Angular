@@ -1,0 +1,9 @@
+.alinear{
+  display: inline-block;
+  background-color: aqua;
+}
+.titulos{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
