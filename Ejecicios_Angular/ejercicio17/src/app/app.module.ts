@@ -1,25 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list/events-list.component';
-import { EventsService } from './services/events.service';
-
-const routes: Routes = [
-{ path: '', component: EventsListComponent },
-{ path: '**', redirectTo: 'EventsListComponent' },
-];
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventsListComponent
+    EventsListComponent,
+    EventDetailsComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(routes)
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
