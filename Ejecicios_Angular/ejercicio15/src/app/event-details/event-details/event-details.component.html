@@ -5,6 +5,11 @@
  <div>{{event?.time}}</div>
  <div>{{event?.location?.address}}, {{event?.location?.city}}, {{event?.location?.country}}</div>
 </div>
+<hr>
 <div class="back">
   <a [routerLink]="['']">< Volver</a>
+</div>
+<hr>
+<div>
+  <button (click)="returnToEvents()">Volver</button>
 </div>

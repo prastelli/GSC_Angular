@@ -10,9 +10,10 @@ import { EventDetailsComponent } from './event-details/event-details/event-detai
 const routes: Routes = [
 { path: '', component: EventsListComponent },
 {path: 'eventdetails/:id', component: EventDetailsComponent},
+{ path: '**', redirectTo: 'EventsListComponent' },
 ];
 
-//{ path: '**', redirectTo: 'EventsListComponent' },
+
 
 @NgModule({
   declarations: [
