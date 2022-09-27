@@ -5,6 +5,9 @@
  <div>{{event?.time}}</div>
  <div>{{event?.location?.address}}, {{event?.location?.city}}, {{event?.location?.country}}</div>
 </div>
+<div>
+  <input type="checkbox" id="cbox2" [value]="reviewed" (change)="onChange()"> <label for="cbox2">Revisada</label>
+</div>
 <hr>
 <div class="back">
   <a [routerLink]="['']">< Volver</a>

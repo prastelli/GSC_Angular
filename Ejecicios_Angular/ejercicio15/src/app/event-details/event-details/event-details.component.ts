@@ -10,7 +10,8 @@ import { ActivatedRoute,Router} from '@angular/router';
 })
 export class EventDetailsComponent implements OnInit {
 
-  event?:Evento = {id:0,name:'',date:'',time:'',location:{address:'',city:'',country:''}}
+  event?:Evento = {id:0,name:'',date:'',time:'',location:{address:'',city:'',country:''}};
+  reviewed: boolean = false;
 
   constructor(private evento: EventsService, private parametro:ActivatedRoute, private router: Router) { }
 
@@ -20,5 +21,8 @@ export class EventDetailsComponent implements OnInit {
 
   returnToEvents(){
       this.router.navigate(['/'])
+  }
+  onChange(){
+    this.reviewed = !this.reviewed
   }
 }

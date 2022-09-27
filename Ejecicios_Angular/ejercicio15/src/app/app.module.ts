@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list/events-list.component';
 import { EventsService } from './services/events.service';
 import { EventDetailsComponent } from './event-details/event-details/event-details.component';
+import { AccesoGuard } from './guards/acceso.guard';
 
 const routes: Routes = [
 { path: '', component: EventsListComponent },
-{path: 'eventdetails/:id', component: EventDetailsComponent},
+{path: 'eventdetails/:id',
+ component: EventDetailsComponent,
+ canActivate:[AccesoGuard],
+ canDeactivate:[AccesoGuard]
+},
 { path: '**', redirectTo: 'EventsListComponent' },
 ];
 
