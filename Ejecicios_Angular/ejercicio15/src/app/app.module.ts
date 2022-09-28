@@ -7,9 +7,11 @@ import { EventsListComponent } from './events-list/events-list.component';
 import { EventsService } from './services/events.service';
 import { EventDetailsComponent } from './event-details/event-details/event-details.component';
 import { AccesoGuard } from './guards/acceso.guard';
+import { EventoResolver } from './resolver/evento.resolver';
+
 
 const routes: Routes = [
-{ path: '', component: EventsListComponent },
+{path: '', component: EventsListComponent, resolve:{resolver: EventoResolver}},
 {path: 'eventdetails/:id',
  component: EventDetailsComponent,
  canActivate:[AccesoGuard],
@@ -29,7 +31,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,RouterModule.forRoot(routes)
   ],
-  providers: [EventsService],
+  providers: [EventsService,EventoResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

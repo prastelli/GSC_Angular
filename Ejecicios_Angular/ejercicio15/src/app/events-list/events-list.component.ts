@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Evento } from '../interface/evento.interface';
-import { EventsService } from '../services/events.service';
 
 @Component({
   selector: 'app-events-list',
@@ -9,16 +9,14 @@ import { EventsService } from '../services/events.service';
 })
 export class EventsListComponent implements OnInit {
 
-  events: Evento[] = []
+ events: Evento[] = []
 
-  constructor(private evento: EventsService) { }
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getEvents()
-  }
-
-  getEvents(){
-    this.events = this.evento.getEvents()
+    this.activatedRoute.data.subscribe(response =>{
+    this.events = response['resolver']})
   }
 
 }
