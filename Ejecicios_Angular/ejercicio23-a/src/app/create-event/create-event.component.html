@@ -1,0 +1,46 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="event-name">Nombre del evento:</label>
+      <input id="event-name" type="text" formControlName="name" required/>
+      <div *ngIf="this.form.get('name')?.hasError('required')
+      && this.form.get('name')?.touched">Name Campo requerido</div>
+    </div>
+    <div class="form-group">
+      <label for="date">Fecha: </label>
+      <input id="date" type="text" formControlName="date" required/>
+      <div *ngIf="this.form.get('date')?.hasError('required')
+      && this.form.get('date')?.touched">Date Campo requerido</div>
+    </div>
+    <div class="form-group">
+      <label for="time">Hora: </label>
+      <input id="time" type="text" formControlName="time" required/>
+      <div *ngIf="this.form.get('time')?.hasError('required')
+      && this.form.get('time')?.touched">Time Campo requerido</div>
+    </div>
+    <div formGroupName="location">
+    <div class="form-group">
+      <label for="address">Dirección: </label>
+      <input id="address" type="text" formControlName="address" required/>
+      <div *ngIf="this.form.get('location')?.get('address')?.hasError('required')
+      && this.form.get('location')?.get('address')?.touched">Address Campo requerido</div>
+    </div>
+    <div class="form-group">
+      <label for="city">Ciudad: </label>
+      <input id="city" type="text" formControlName="city" required/>
+      <div *ngIf="this.form.get('location')?.get('city')?.hasError('required')
+      && this.form.get('location')?.get('city')?.touched">City Campo requerido</div>
+    </div>
+    <div class="form-group">
+      <label for="country">Pais: </label>
+      <input id="country" type="text" formControlName="country" required/>
+      <div *ngIf="this.form.get('location')?.get('country')?.hasError('required')
+      && this.form.get('location')?.get('country')?.touched">Country Campo requerido</div>
+      <div *ngIf="this.form.get('location')?.get('country')?.hasError('pattern')
+      && this.form.get('location')?.get('country')?.touched">Country Campo invalido</div>
+      </div>
+  </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!this.form.valid">Guardar</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancelar</button>
+  </form>
+</div>

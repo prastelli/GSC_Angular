@@ -1,0 +1,19 @@
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+}
+
+.form-group {
+    margin-top: 5px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid black;
+}
