@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { EventsListComponent } from './events-list/events-list.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { FormsModule } from '@angular/forms';
+import { dateValidatorDirective } from './date.validator';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsListComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    dateValidatorDirective
   ],
   imports: [
     BrowserModule,
